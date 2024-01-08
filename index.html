@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *, *::after, *::before {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --dark-cyan: hsl(158, 36%, 37%);
+      --dark-cyan-hover: hsl(158, 44%, 16%);
+      --cream: hsl(30, 38%, 92%);
+      --dark-blue: hsl(212, 21%, 14%);
+      --dark-grayish-blue: hsl(228, 12%, 48%);
+      --white: hsl(0, 0%, 100%);
+    }
+
+    p, h1, h2, h3, h4, h5, h6 {
+      overflow-wrap: break-word;
+    } 
+    body {
+      font-size: 14px;
+      font-family: 'Montserrat';
+      font-weight: 700;
+      display: grid;
+      place-content: center;
+      min-block-size: 100vh;
+      background-color: var(--cream);
+      margin: 1rem;
+      padding: 0;
+    }
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background-color: var(--white);
+      width: 800px;
+      border-radius: 15px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card2 {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: flex-start;
+      padding-left: 1rem;
+      width: 80%;
+      margin-inline: auto;
+    }
+
+    #title {
+      color: var(--dark-grayish-blue);
+      font-weight: 500;
+      letter-spacing: 0.3rem;
+      margin-top: 3rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    .card2 h1 {
+      color: var(--dark-blue);
+      font-weight: 700;
+      font-family: 'Fraunces';
+      font-size: 3rem;
+      line-height: 2.5rem;
+    }
+
+    .card2 p {
+      color: var(--dark-grayish-blue);
+      font-weight: 500;
+      font-size: 1rem;
+      width: 90%;
+    }    
+
+    h2 {
+      display: flex;
+      justify-content: space-between;
+      width: 85%;
+      font-family: 'Fraunces';
+      font-weight: 700;
+      font-size: 2.7rem;
+      color: var(--dark-cyan);
+      align-items: center;
+    }
+
+    span {
+      font-size: 1.2rem;
+      color: var(--dark-grayish-blue);
+      text-decoration: line-through;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: var(--dark-cyan);
+      color: var(--white);
+      width: 100%;
+      height: 3.5em;
+      border: none;
+      border-radius: 11px;
+      padding: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    button:is(:hover, :focus) {
+      background-color: var(--dark-cyan-hover);
+    }
+
+    @media (max-width: 600px) { 
+      .wrapper {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .card1 {
+        height: 400px;
+        width: 100%;
+       
+      }
+      #product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+
+      .card2 {
+        width: 80%;
+        height: 100%;
+        margin-bottom: 1.3rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrapper">
+      <div class="card1 card">
+        <img id='product-image' src="/images/image-product-desktop.jpg" alt="">
+      </div>
+
+      <div class="card2 card">
+        <p id="title">Perfume</p>
+        <h1>Gabrielle Essence Eau De Parfum</h1>
+        <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+        Perfumer-Creator for the House of CHANEL.</p>
+        <h2>$149.99<span>$169.99</span></h2>
+        <button>
+          <svg width="15" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.383 10.388a2.397 2.397 0 0 0-1.518-2.222l1.494-5.593a.8.8 0 0 0-.144-.695.8.8 0 0 0-.631-.28H2.637L2.373.591A.8.8 0 0 0 1.598 0H0v1.598h.983l1.982 7.4a.8.8 0 0 0 .799.59h8.222a.8.8 0 0 1 0 1.599H1.598a.8.8 0 1 0 0 1.598h.943a2.397 2.397 0 1 0 4.507 0h1.885a2.397 2.397 0 1 0 4.331-.376 2.397 2.397 0 0 0 1.12-2.021ZM11.26 7.99H4.395L3.068 3.196h9.477L11.26 7.991Zm-6.465 6.392a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Zm6.393 0a.8.8 0 1 1 0-1.598.8.8 0 0 1 0 1.598Z" fill="#FFF"/></svg>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
